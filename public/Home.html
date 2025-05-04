@@ -7,9 +7,9 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
+    <header class="scrolled">
         <section class="logo">
-            <a href="Home.html"><img src="images/company_image.png" alt="Logo da Empresa" class="company_image"></a>
+            <a href="Home.html"><img src="images/png-1.svg" alt="Logo da Empresa" class="company_image"></a>
         </section>
         <nav>
             <ul class="topics">
@@ -29,20 +29,38 @@
         <main>
             <div class="banner">
                 <div class="slides">
-                    <img src="image1.jpg" alt="Image 1">
-                    <img src="image2.jpg" alt="Image 2">
-                    <img src="image3.jpg" alt="Image 3">
+                    <img src="images/Banner_home_1.png" alt="Image 1" class="slide active">
+                    <img src="images/Banner_home_2.png" alt="Image 2" class="slide active">
+                    <img src="images/Banner_home_3.jpg" alt="Image 3" class="slide active">
                 </div>
+                <script src="Banners.js"></script>
             </div>
         </br>
             <h2>ÚLTIMOS DESTAQUES</h2>
 
-            <p>ESCOLHA SUA MARCA</p>
+            <div class="marcas-container">
+                <h2>PESQUISE POR MARCA</h2>
+                <div class="marcas-wrapper">
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_BMW.png" alt="BMW"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/Logo_chevrolet.png" alt="Chevrolet"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_ferrari.png" alt="Ferrari"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_GMC.png" alt="GMC"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_lamborghini.png" alt="Lamborghini"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_landrover.png" alt="Land Rover"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_porsche.png" alt="Porsche"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_RAM.webp" alt="RAM"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_Toyota.png" alt="Toyota"></a></div>
+                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_Jeep.png" alt="Jeep"></a></div>
+                </div>
+                <script src="Marcas.js"></script>
+            </div>
 
             <p>QUALIDADE E SEGURANÇA GARANTIDA</p>
 
-            <div class="map-container">
-                <div id="map"></div>
+            <div class="map-section">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
                 <div class="location-info">
                     <h3>Nome da Empresa</h3>
                     <p>Endereço:</p>
