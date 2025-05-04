@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Home</title>
 </head>
+
 <body>
     <header class="scrolled">
         <section class="logo">
@@ -16,6 +18,7 @@
                 <li><a href="Home.html">HOME</a></li>
                 <li><a href="About_us.html">EMPRESA</a></li>
                 <li><a href="Estoque.html">ESTOQUE</a></li>
+                <li><a href="#mapa">LOCALIZAÇÃO</a></li>
                 <li><a href="Contate-nos.html">CONTATE-NOS</a></li>
                 <li>
                     <form action="Estoque.html" method="get" style="display: inline;">
@@ -26,55 +29,99 @@
             </ul>
         </nav>
     </header>
-        <main>
-            <div class="banner">
-                <div class="slides">
-                    <img src="images/Banner_home_1.png" alt="Image 1" class="slide active">
-                    <img src="images/Banner_home_2.png" alt="Image 2" class="slide active">
-                    <img src="images/Banner_home_3.jpg" alt="Image 3" class="slide active">
-                </div>
-                <script src="Banners.js"></script>
+    <main>
+        <div class="banner">
+            <div class="slides">
+                <img src="images/Banner_home_1.png" alt="Image 1" class="slide active">
+                <img src="images/Banner_home_2.png" alt="Image 2" class="slide active">
+                <img src="images/Banner_home_3.jpg" alt="Image 3" class="slide active">
             </div>
-        </br>
+            <script src="Banners.js"></script>
+        </div>
+        <section class="ultimos-destaques">
             <h2>ÚLTIMOS DESTAQUES</h2>
-
-            <div class="marcas-container">
-                <h2>PESQUISE POR MARCA</h2>
-                <div class="marcas-wrapper">
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_BMW.png" alt="BMW"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/Logo_chevrolet.png" alt="Chevrolet"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_ferrari.png" alt="Ferrari"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_GMC.png" alt="GMC"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_lamborghini.png" alt="Lamborghini"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_landrover.png" alt="Land Rover"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_porsche.png" alt="Porsche"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_RAM.webp" alt="RAM"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_Toyota.png" alt="Toyota"></a></div>
-                    <div class="marca-item"><a href="Estoque.html"><img src="images/logo_Jeep.png" alt="Jeep"></a></div>
-                </div>
-                <script src="Marcas.js"></script>
+            <div class="destaques-grid" id="destaquesGrid">
             </div>
+            <script src="Destaques.js"></script>
+        </section>
 
-            <p>QUALIDADE E SEGURANÇA GARANTIDA</p>
+        <div class="marcas-container">
+            <h2>PESQUISE POR MARCA</h2>
+            <div class="marcas-wrapper">
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="BMW"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Chevrolet"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Ferrari"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="GMC"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Lamborghini"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Land Rover"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Porsche"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="RAM"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Toyota"></a></div>
+                <div class="marca-item"><a href="Estoque.html"><img src="images/png-1.svg" alt="Jeep"></a></div>
+            </div>
+            <script src="Marcas.js"></script>
+        </div>
 
-            <div class="map-section">
-                <div class="map-container">
-                    <div id="map"></div>
+        <section class="qualidade-garantida">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>QUALIDADE GARANTIDA</h1>
+                <p>Especializada na venda de veículos de luxo e super-esportivos, a Paíto Motors se dedica desde 2003 no
+                    mercado automotivo como sinônimo de transparência, confiança e qualidade. Nossos veículos são
+                    verificados e certificados, e nosso estoque é constantemente renovado com o que há de mais novo e
+                    exclusivo. Aqui você vai encontrar o carro que deseja.</p>
+                <button class="conheca-btn">CONHEÇA</button>
+            </div>
+            <script src="Qualidade.js"></script>
+        </section>
+
+        <div class="container-mapa" id="mapa">
+            <div class="info-lado-esquerdo">
+                <div class="logo-inicial">INSERIR LOGO DA EMPRESA</div>
+                <div class="endereco">
+                    <h3>NOME DA SEDE</h3>
+                    <p>ENDERECO SEDE</p>
+                    <p>BAIRRO - CEP</p>
+                    <p>CIDADE e ESTADO</p>
                 </div>
-                <div class="location-info">
-                    <h3>Nome da Empresa</h3>
-                    <p>Endereço:</p>
-                    <p>4.9 <span class="star">&#9733;</span> <span class="review-count">227 avaliações</span></p>
-                    <a href="#" target="_blank">Ver mapa ampliado</a>
+                <div class="localizacao-alternativa">
+                    <h3>FILIAL ALTERNATIVA</h3>
+                    <p>ENDERECO SEDE</p>
+                    <p>BAIRRO - CEP</p>
+                    <p>CIDADE e ESTADO</p>
+                </div>
+                <div class="contato">
+                    <h3>Contato</h3>
+                    <p>NUMERO DE TELEFONE</p>
+                    <p><a href="mailto:ENDEREÇO DE EMAIL DA EMPRESA"
+                            style="color: #fff; text-decoration: none;">ENDEREÇO DE EMAIL DA EMPRESA</a></p>
+                </div>
+                <div class="redes-sociais">
+                    <h3>Siga-nos</h3>
+                    <div>
+                        <a href="URL DO INSTAGRAM DA EMPRESSA" target="_blank" aria-label="Instagram"><img
+                                src="images/instagram.png"></a>
+                        <a href="URL DO FACEBOOK DA EMPRESA" target="_blank" aria-label="Facebook"><img
+                                src="images/facebook.png"></a>
+                        <a href="URL DO CANAL DO YOUTUBE DA EMPRESA" target="_blank" aria-label="YouTube"><img
+                                src="images/youtube.png"></a>
+                    </div>
                 </div>
             </div>
-            <script src="Mapa.JS"></script>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
-            </main>
+            <div class="mapa-lado-direito">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7354.248744997231!2d-47.053853675600514!3d-22.83488763205105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c428eba81223%3A0xa8d0efb710aadd9d!2sPontif%C3%ADcia%20Universidade%20Cat%C3%B3lica%20de%20Campinas!5e0!3m2!1spt-BR!2sbr!4v1746379304542!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
     <footer>
         <p>Nome da Empresa | CEP: XXXX | Cidade: XXXX | Endereço: XXXX | CNPJ: XXXXX <br>
             <img src="images/XXXX" alt="Logo da Empresa"><br>
-            &copy; 2025 Your Company Name. All rights reserved.</p>
+            &copy; 2025 Your Company Name. All rights reserved.
+        </p>
     </footer>
 </body>
+
 </html>

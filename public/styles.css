@@ -1,3 +1,12 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #FFF;
+    /* Cor de fundo escura para simular a imagem */
+}
+
 header {
     position: fixed;
     top: 0;
@@ -152,6 +161,139 @@ header .search-bar button:hover {
     /* Mantém o slide ativo na posição original */
 }
 
+.navigation-dots {
+    position: absolute;
+    /* Para posicionar as bolinhas sobre o banner */
+    bottom: 20px;
+    /* Ajuste a distância do fundo */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta o alinhamento central */
+    display: flex;
+    /* Para alinhar as bolinhas horizontalmente */
+    z-index: 10;
+    /* Garante que as bolinhas fiquem acima das imagens */
+}
+
+.dot {
+    width: 12px;
+    /* Largura da bolinha */
+    height: 12px;
+    /* Altura da bolinha */
+    border-radius: 50%;
+    /* Para torná-la circular */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Cor branca com um pouco de transparência */
+    margin: 0 8px;
+    /* Espaçamento entre as bolinhas */
+    cursor: pointer;
+    /* Indica que é clicável */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* Borda sutil */
+}
+
+.dot.active {
+    background-color: #FFF;
+    /* Cor da bolinha ativa (exemplo: laranja) */
+    border-color: #FFF;
+}
+
+.ultimos-destaques {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+    /* Cor de fundo similar */
+}
+
+.ultimos-destaques h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Layout responsivo em grid */
+    gap: 20px;
+    max-width: 1200px;
+    /* Largura máxima da grid */
+    margin: 0 auto;
+}
+
+.destaque-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    /* Para posicionar a tag "BLINDADO" */
+}
+
+.destaque-card:hover {
+    transform: translateY(-5px);
+}
+
+.destaque-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.blinado {
+    position: relative;
+    /* Para posicionar a tag "BLINDADO" */
+    background-color: #f7f7f7;
+    /* Cor de fundo similar */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease -in-out;
+    /* Estilos específicos para o card blindado, se necessário */
+}
+
+.blinado-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9900;
+    /* Cor da tag "BLINDADO" */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    /* Garante que a tag fique acima da imagem */
+}
+
+/* Estilos responsivos (opcional) */
+@media (max-width: 768px) {
+    .destaques-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 h2 {
     font-size: 2.5em;
     color: #333;
@@ -176,7 +318,8 @@ h2 {
     align-items: center;
     /* Centraliza o conteúdo verticalmente */
     justify-content: center;
-    margin: 0 auto; /* Centraliza o container horizontalmente */
+    margin: 0 auto;
+    /* Centraliza o container horizontalmente */
 }
 
 .marcas-container h2 {
@@ -209,7 +352,8 @@ h2 {
     /* Espaçamento lateral */
     box-sizing: border-box;
     /* Inclui padding no cálculo da largura total */
-    margin: 0 auto; /* Centraliza o container horizontalmente */
+    margin: 0 auto;
+    /* Centraliza o container horizontalmente */
     background-color: #575858;
     /* Cor de fundo do container */
     border-radius: 8px;
@@ -238,13 +382,12 @@ h2 {
     transition: transform 0.3s ease;
     /* Transição suave */
 }
+
 .marca-item img {
     height: 50px;
     display: block;
     margin: 0 auto;
     /* Centraliza a imagem dentro do item */
-    vertical-align: middle;
-    /* Alinha verticalmente a imagem */
     transition: transform 0.3s ease;
 }
 
@@ -281,113 +424,412 @@ h3 {
 p {
     /* Chosen for optimal readability and consistency across paragraphs */
     font-size: 1.2em;
-    color: #666;
+    color: #FFF;
     line-height: 1.5;
-    text-align: center;
-    /* Centraliza o texto do parágrafo */
+    text-align: justify;
+    /* Justifica o texto do parágrafo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* Sombra para melhorar a legibilidade */
+    margin: 20px 0;
+    /* Espaçamento superior e inferior */
+    padding: 0 20px;
+    /* Espaçamento lateral */
+    box-sizing: border-box;
+    /* Inclui padding no cálculo da largura total */
     margin: 0 auto;
     /* Centraliza o parágrafo horizontalmente */
     max-width: 800px;
     /* Largura máxima do parágrafo */
 }
 
-.map-container {
+.about_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto dentro dos elementos */
+    color: #000; /* Define a cor do texto para preto */
+    padding: 20px; /* Adiciona um espaçamento interno ao redor da seção */
+    width: 80%; /* Define uma largura para a seção (ajuste conforme necessário) */
+    margin: 20px auto; /* Centraliza a seção na página horizontalmente e adiciona margem vertical */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    margin-top: auto; /* Permite que a seção ocupe o espaço restante na página */
+    margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
+    background-color: #f7f7f7; /* Cor de fundo clara para a seção */
+    border-radius: 8px; /* Bordas arredondadas para a seção */
+}
+
+.about_us h1 {
+    font-size: 2.5em; /* Tamanho da fonte do título (ajuste conforme necessário) */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.about_us img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 15px; /* Espaçamento abaixo das imagens */
+}
+
+.about_us p {
+    line-height: 1.6; /* Espaçamento entre as linhas do texto para melhor leitura */
+    margin-bottom: 15px; /* Espaçamento abaixo dos parágrafos */
+    width: 70%; /* Define uma largura para os parágrafos (ajuste conforme necessário) */
+    max-width: 600px; /* Define uma largura máxima para os parágrafos */
+    color: #333; /* Cor do texto dos parágrafos */
+    text-align: justify; /* Justifica o texto dos parágrafos */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para melhorar a legibilidade */
+    padding: 0 20px; /* Adiciona espaçamento lateral ao texto */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+    max-width: 800px; /* Largura máxima do parágrafo */
+    font-size: 1.2em; /* Tamanho da fonte do parágrafo (ajuste conforme necessário) */
+}
+
+/* Estilos específicos para as imagens, se necessário */
+.about_us .image_main1 {
+    /* Adicione estilos específicos para a primeira imagem aqui */
+}
+
+.about_us .image_main2 {
+    /* Adicione estilos específicos para a segunda imagem aqui */
+}
+
+.qualidade-garantida {
+    position: relative;
+    /* Remove height: 100vh para não ocupar toda a altura */
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente o conteúdo */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo (se ainda desejado) */
+    text-align: center;
+    background-image: url('images/maxresdefault.jpg');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    /* Defina uma largura máxima para o contêiner */
+    max-width: 1200px;
+    /* Ajuste este valor conforme o design */
+    margin: 40px auto;
+    /* Adiciona margem superior e inferior e centraliza horizontalmente */
+    border-radius: 8px;
+    /* Opcional: para dar um arredondamento nas bordas */
+    overflow: hidden;
+    /* Garante que o overlay e o conteúdo fiquem dentro das bordas arredondadas */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Camada escura sobre a imagem */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    /* Garante que o conteúdo fique acima do overlay */
+    padding: 40px;
+    /* Centraliza o texto dentro do contêiner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    max-width: 600px;
+    /* Limita a largura do texto para melhor leitura */
+}
+
+.conheca-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Cor do botão "CONHEÇA" */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    /* Caso você queira usar como link */
+}
+
+.conheca-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Cor do botão ao passar o mouse */
+    text-decoration: none;
+    /* Remove o sublinhado ao passar o mouse */
+    color: #fff;
+    /* Cor do texto ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta o tamanho do botão ao passar o mouse */
+    transition: transform 0.3s ease;
+    /* Transição suave para o aumento do botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave ao passar o mouse */
+    text-align: center;
+    /* Centraliza o texto do botão */
+    text-decoration: none;
+    /* Remove o sublinhado do link (se for um link) */
+    display: inline-block;
+    /* Permite aplicar padding e margin corretamente */
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+}
+
+.contact_us {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 30px;
+    font-family: sans-serif; /* Fonte padrão */
+    background-color: #f9f9f9; /* Fundo levemente cinza */
+}
+
+.contact_us h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #333; /* Cor do título */
+    text-transform: uppercase; /* Texto em maiúsculo como em "FALE CONOSCO" */
+    letter-spacing: 1px;
+}
+
+.contact_us p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact_us form {
+    width: 80%;
+    max-width: 550px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_us label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 0px; /* Reduzi drasticamente a margem abaixo do label */
+    font-weight: bold;
+}
+
+.contact_us input[type="text"],
+.contact_us input[type="email"],
+.contact_us input[type="tel"],
+.contact_us textarea {
+    padding: 8px;
+    margin-bottom: px; /* Reduzi a margem abaixo dos campos de entrada */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2em;
+    box-sizing: border-box;
+}
+
+.contact_us textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.contact_us button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+    margin-top: 15px; /* Adicionei um pouco de margem acima do botão para separá-lo dos campos */
+}
+
+.contact_us button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Estilo para a nota de campos obrigatórios */
+.contact_us form + p {
+    font-size: 0.75em;
+    color: #ff0000;
+    margin-top: 8px;
+    text-align: left;
+}
+
+.container-mapa {
+    display: flex;
+    width: 80%;
+    /* Ajuste a largura conforme necessário */
+    margin: 40px auto;
+    /* Centraliza o container na página */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Garante que o border-radius funcione corretamente */
+}
+
+.info-lado-esquerdo {
+    background-color: #444;
+    /* Cor de fundo escura como na imagem */
+    color: #fff;
+    padding: 30px;
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* Distribui o espaço verticalmente */
+}
+
+.logo-inicial {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    /* Centraliza o container horizontalmente */
-    width: 80%;
-    /* Largura do container */
-    max-width: 1200px;
-    /* Largura máxima do container */
-    background-color: #f8f9fa;
-    /* Cor de fundo clara */
-    border-radius: 8px;
-    /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+    margin: 0 auto 20px;
 }
 
-#map {
-    height: 300px;
-    width: 60%;
-    /* Ajuste conforme a necessidade */
+.endereco,
+.localizacao-alternativa,
+.contato,
+.redes-sociais {
+    margin-bottom: 20px;
 }
 
-.location-info {
-    padding: 20px;
-    background-color: #fff;
-    width: 40%;
-    /* Ajuste conforme a necessidade */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.endereco h3,
+.localizacao-alternativa h3,
+.contato h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #ddd;
 }
 
-.location-info h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.location-info p {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.star {
-    color: gold;
-}
-
-.review-count {
-    color: #999;
+.localizacao-alternativa p {
     font-size: 0.9em;
+    margin-bottom: 3px;
 }
 
-.location-info a {
-    color: #007bff;
+.contato p {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+}
+
+.redes-sociais {
+    margin-bottom: 20px;
+    text-align: center;
+    /* Centraliza o título "Siga-nos" */
+}
+
+.redes-sociais h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    /* Aumentei um pouco a margem abaixo do título */
+    color: #ddd;
+}
+
+.redes-sociais div {
+    display: flex;
+    justify-content: center;
+    /* Centraliza os ícones horizontalmente */
+    gap: 15px;
+    /* Espaçamento entre os ícones */
+    margin-top: 0;
+    /* Removi a margem superior desnecessária, pois já temos margem no container */
+}
+
+.redes-sociais a {
+    color: #fff;
+    /* Cor do texto (se houver) nos links */
     text-decoration: none;
+    /* Remove o sublinhado padrão dos links */
+    display: inline-block;
+    /* Permite definir largura e altura nos links (útil para os ícones) */
 }
 
-.location-info a:hover {
-    text-decoration: underline;
+.redes-sociais a img {
+    width: 30px;
+    /* Defina a largura desejada para os ícones */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    /* Remove qualquer espaçamento extra abaixo da imagem */
+    opacity: 0.7;
+    /* Adiciona um pouco de transparência para um efeito sutil */
+    transition: opacity 0.3s ease-in-out;
+    /* Adiciona uma transição suave para o efeito de hover */
 }
 
+.redes-sociais a:hover img {
+    opacity: 1;
+    /* Remove a transparência ao passar o mouse */
+}
+
+.mapa-lado-direito {
+    flex: 2;
+    /* Ocupa mais espaço para o mapa */
+}
+
+.mapa-lado-direito iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* Remove a borda padrão do iframe */
+}
+
+/* Estilos responsivos (opcional) */
 @media (max-width: 768px) {
-    .map-container {
+    .container-mapa {
         flex-direction: column;
-        margin: 20px auto;
-        /* Mantém a centralização em telas menores */
+        /* Empilha os elementos em telas menores */
     }
 
-    #map {
-        width: 100%;
-        height: 300px;
-    }
-
-    .location-info {
-        width: 100%;
-        padding: 15px;
+    .mapa-lado-direito {
+        height: 400px;
+        /* Define uma altura para o mapa em telas menores */
     }
 }
 
 footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    position: relative;
     z-index: 1000;
-}
-
-footer a {
-    color: #007bff;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    background-color: #444;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
     text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
