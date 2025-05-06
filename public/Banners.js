@@ -7,6 +7,10 @@ const totalSlides = slides.length;
 let currentIndex = 0;
 let intervalId;
 const autoSlideInterval = 4000; // Tempo em milissegundos para mudar de slide automaticamente
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const indicatorsContainer = document.querySelector('.indicators');
+const indicators = indicatorsContainer ? indicatorsContainer.querySelectorAll('.indicator') : [];
 
 // Garante que apenas o primeiro slide seja visível inicialmente
 slides.forEach((slide, index) => {
@@ -34,33 +38,31 @@ function goToSlide(index) {
     slides[currentIndex].classList.add('active');
     slides[currentIndex].style.opacity = 1;
 
-    updateDots();
+    updateIndicators();
 }
 
-// Cria as bolinhas de navegação
-function createDots() {
-    const navigationDots = document.createElement('div');
-    navigationDots.classList.add('navigation-dots');
-    banner.appendChild(navigationDots);
-
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dot.addEventListener('click', () => goToSlide(i));
-        navigationDots.appendChild(dot);
-    }
-    updateDots(); // Define a primeira bolinha como ativa inicialmente
+// Função para ir para o slide anterior
+function prevSlide() {
+    goToSlide(currentIndex - 1);
 }
 
-// Atualiza a classe 'active' nas bolinhas de navegação
-function updateDots() {
-    const navigationDots = banner.querySelector('.navigation-dots');
-    if (navigationDots) {
-        const dots = navigationDots.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            dot.classList.remove('active');
+// Função para ir para o próximo slide
+function nextSlide() {
+    goToSlide(currentIndex + 1);
+}
+
+// Função para ir para um slide específico clicando no indicador
+function currentSlide(index) {
+    goToSlide(index);
+}
+
+// Atualiza a classe 'active' nos indicadores
+function updateIndicators() {
+    if (indicators.length > 0) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.remove('active');
             if (index === currentIndex) {
-                dot.classList.add('active');
+                indicator.classList.add('active');
             }
         });
     }
@@ -81,12 +83,23 @@ function stopAutoSlide() {
     clearInterval(intervalId);
 }
 
+// Adiciona event listeners para os botões de controle
+if (prevButton) {
+    prevButton.addEventListener('click', prevSlide);
+}
+
+if (nextButton) {
+    nextButton.addEventListener('click', nextSlide);
+}
+
+// Adiciona event listeners para os indicadores
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => currentSlide(index));
+});
+
 banner.addEventListener('mouseenter', stopAutoSlide);
 banner.addEventListener('mouseleave', startAutoSlide);
 
-// Inicializa as bolinhas e o slide automático
-createDots();
-startAutoSlide();
-
-// Garante que o primeiro slide seja exibido corretamente ao carregar a página
+// Inicializa o primeiro slide e o slide automático
 goToSlide(0);
+startAutoSlide();

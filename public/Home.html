@@ -36,6 +36,16 @@
                 <img src="images/Banner_home_2.png" alt="Image 2" class="slide active">
                 <img src="images/Banner_home_3.jpg" alt="Image 3" class="slide active">
             </div>
+            <div class="controls">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="indicators">
+                <span class="indicator" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+            </div>
+            <div class="navigation-dots"></div>
             <script src="Banners.js"></script>
         </div>
         <section class="ultimos-destaques">

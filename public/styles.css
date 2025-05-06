@@ -233,6 +233,7 @@ main {
     /* Inicia na posição original */
     z-index: 1;
     /* Garante que os slides fiquem acima do fundo */
+    height: 100%; /* Garante que a altura dos slides acompanhe o banner */
 }
 
 .slide {
@@ -246,21 +247,23 @@ main {
     /* Bordas arredondadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Sombra suave */
-    padding: 20px;
-    /* Espaçamento interno */
+    padding: 0; /* Removi o padding para que a imagem ocupe todo o espaço */
     box-sizing: border-box;
     /* Inclui padding no cálculo da largura total */
     width: 100%;
     height: 100%;
     pointer-events: none;
     visibility: hidden;
-    width: 100%;
-    /* Largura total do banner */
-    height: 100%;
-    /* Altura total do banner */
     flex-shrink: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    overflow: hidden; /* Adicionado para garantir que a imagem não ultrapasse as bordas do slide */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço do slide, mantendo a proporção e cortando se necessário */
 }
 
 .slide.active {
@@ -311,6 +314,66 @@ main {
 .dot.active {
     background-color: #FFF;
     /* Cor da bolinha ativa (exemplo: laranja) */
+    border-color: #FFF;
+}
+
+/* Estilos para os controles (botões de navegação) */
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2; /* Garante que os controles fiquem acima dos slides */
+}
+
+.controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.controls button:hover {
+    opacity: 1;
+}
+
+.controls button:focus {
+    outline: none; /* Remove a borda de foco padrão */
+}
+
+/* Estilos para os indicadores (bolinhas de navegação) */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 2; /* Garante que os indicadores fiquem acima dos slides */
+}
+
+.indicator {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 8px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #FFF;
     border-color: #FFF;
 }
 
