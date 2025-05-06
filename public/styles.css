@@ -962,6 +962,37 @@ p {
     }
 }
 
+/* Estilos para o botão flutuante */
+.whatsapp-float {
+    position: fixed; /* Fixa o elemento na tela */
+    bottom: 20px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da parte direita da tela */
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    color: white;
+    padding: 10px 15px; /* Ajustei o padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* Tamanho da fonte do texto */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+}
+
+/* Estilos para a imagem do ícone do WhatsApp */
+.whatsapp-icon-img {
+    width: 16px; /* Defina a largura desejada para a imagem */
+    height: 10px; /* Mantém a proporção da imagem */
+    margin-right: 5px; /* Espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem verticalmente com o texto */
+}
+
 footer {
     color: white;
     text-align: center;
