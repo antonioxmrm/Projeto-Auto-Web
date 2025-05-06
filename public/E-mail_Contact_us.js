@@ -22,6 +22,33 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: phone,
             message: message
         };
+        // Verifique se todos os campos obrigatórios estão preenchidos
+        if (!name || !email || !phone || !message) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+        // Validação básica de email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert('Por favor, insira um endereço de email válido.');
+            return;
+        }
+        // Validação básica de telefone (opcional)
+        const phonePattern = /^\d{10,15}$/; // Aceita números de 10 a 15 dígitos
+        if (phone && !phonePattern.test(phone)) {
+            alert('Por favor, insira um número de telefone válido (10 a 15 dígitos).');
+            return;
+        }
+        // Validação básica de mensagem
+        if (message.length < 10) {
+            alert('A mensagem deve ter pelo menos 10 caracteres.');
+            return;
+        }
+        // Validação básica de nome
+        if (name.length < 2) {
+            alert('O nome deve ter pelo menos 2 caracteres.');
+            return;
+        }
 
         // Envie o email usando o EmailJS
         emailjs.send(serviceID, templateID, templateParams, publicKey)
