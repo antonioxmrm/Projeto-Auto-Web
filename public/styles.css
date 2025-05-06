@@ -37,27 +37,6 @@ header {
     /* Adiciona uma sombra sutil para destaque */
 }
 
-:root {
-    --background-color: #fff;
-    --slider-bg-color: #ccc;
-    --slider-circle-color: #fff;
-}
-
-/* Define CSS variables for dark theme*/
-[data-theme="dark"] {
-    --brackground-color: #1e272e;
-    --slider-bg-color: #4d4d4d;
-    --slider-circle-color: #333;
-}
-
-.container-checkbox {
-max-width: 600px;
-margin: 50px auto;
-padding: 20px;
-text-align: left;
-}
-
-
 
 /* Estilos para a seção da logo */
 .logo a {
