@@ -4,10 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" href="images/png-1.svg" type="image/svg">
+    <style>
+        /* Esconde o conteúdo principal inicialmente */
+        #content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <div id="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Carregando...</p>
+    </div>
+    <script src="Loading.js"></script>
     <header class="scrolled">
         <section class="logo">
             <a href="Home.html"><img src="images/png-1.svg" alt="Logo da Empresa" class="company_image"></a>

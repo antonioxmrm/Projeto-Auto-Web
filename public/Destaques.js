@@ -18,7 +18,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro1.html",
+        link: "Produto.html",
         blindado: false
     },
     {
@@ -26,7 +26,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro2.html",
+        link: "Produto.html",
         blindado: false
     },
     {
@@ -34,7 +34,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro3.html",
+        link: "Produto.html",
         blindado: false
     },
     {
@@ -42,7 +42,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro4.html",
+        link: "Produto.html",
         blindado: false
     },
     {
@@ -50,7 +50,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro5.html",
+        link: "Produto.html",
         blindado: false
     },
     {
@@ -58,7 +58,7 @@ const carrosData = [
         anoKm: "ANO DO CARRO - KM",
         valor: "Valor do carro",
         imagem: "images/png-1.svg",
-        link: "pagina_carro6.html",
+        link: "Produto.html",
         blindado: true
     }
 ];

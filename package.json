@@ -1,0 +1,24 @@
+{
+  "name": "projetos-teste",
+  "version": "1.0.0",
+  "description": "<h1>Relatório de Projeto - AutoWeb</h1>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonioxmrm/Projeto-Auto-Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonioxmrm/Projeto-Auto-Web/issues"
+  },
+  "homepage": "https://github.com/antonioxmrm/Projeto-Auto-Web#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
