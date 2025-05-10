@@ -690,15 +690,6 @@ p {
     /* Tamanho da fonte do parágrafo (ajuste conforme necessário) */
 }
 
-/* Estilos específicos para as imagens, se necessário */
-.about_us .image_main1 {
-    /* Adicione estilos específicos para a primeira imagem aqui */
-}
-
-.about_us .image_main2 {
-    /* Adicione estilos específicos para a segunda imagem aqui */
-}
-
 .qualidade-garantida {
     position: relative;
     /* Remove height: 100vh para não ocupar toda a altura */
